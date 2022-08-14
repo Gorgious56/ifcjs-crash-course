@@ -1,3 +1,7 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
 .model-list {
     border: 1px solid black;
     border-radius: 0.5rem;
@@ -5,14 +9,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
-    /* height: fit-content; */
-    /* min-height: 40rem; */
-    /* overflow: scroll; */
-
-    /* flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0; */
 }
 
 .model-list-item {
@@ -22,7 +18,18 @@
     border: 1px solid black;
     width: 5rem;
     height:5rem;
-    text-align: center;
+
+    /* https://stackoverflow.com/a/22218694/7092409 */
+    align-items: center;    
+    justify-content: center;
 
     display: flex;
+    flex-direction: column;
+}
+
+.model-list-item-snapshot {
+    display: flex;
+    /* https://stackoverflow.com/questions/3029422/how-do-i-auto-resize-an-image-to-fit-a-div-container */
+    max-width:100%;
+    max-height:100%;
 }
