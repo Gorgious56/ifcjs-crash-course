@@ -1,6 +1,7 @@
 * {
     font-family: "Roboto", sans-serif;
     --background-element-light: #e8e8e8;
+    --background-element-heavy: #dadada;
     --hover-color: rgb(215, 238, 245);
     --font-color: royalblue;
     --font-color-heavy: rgb(50, 81, 173);
@@ -51,6 +52,7 @@ h1 {
 
 .model-list-item:hover {
     font-weight: bold;
+    background-color: var(--background-element-heavy);
 }
 
 /* https://stackoverflow.com/a/17489945/7092409 */
