@@ -1,8 +1,21 @@
 import { projects } from "./projects.js";
 
+const container = document.querySelector(".model-list");
+for (let project of projects) {
+    addNewCardToContainer(container, project);
+}
+
+function addNewCardToContainer(container, project) {
+    const newcard = createCard(project);
+    container.appendChild(newcard);
+}
+
 function createCard(project) {
     const card = document.createElement("a");
-    card.href = `./model-viewer.html?id=${project.id}`;
+    card.href = "./model-viewer.html";
+    const url = new URL(card.href);
+    url.searchParams.set("id", project.id);
+    card.href = url;
     card.classList.add("model-list-item");
 
     const text = document.createElement("div");
@@ -17,10 +30,4 @@ function createCard(project) {
     card.appendChild(img);
 
     return card;
-}
-
-const container = document.querySelector(".model-list");
-for (let project of projects) {
-    const newcard = createCard(project);
-    container.appendChild(newcard);
 }
